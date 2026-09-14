@@ -165,7 +165,7 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 .chip{display:inline-flex;align-items:center;gap:.55rem;background:rgba(18,13,9,.55);border:1px solid rgba(220,205,175,.3);
   border-radius:999px;padding:.5rem 1.05rem;backdrop-filter:blur(10px);font-family:var(--font-m);font-size:.72rem;letter-spacing:.12em;
   white-space:nowrap;text-shadow:0 1px 3px rgba(10,7,5,.85)}
-.cue{position:absolute;left:50%;bottom:5.5vh;transform:translateX(-50%);z-index:6;opacity:0}
+.cue{position:absolute;left:50%;bottom:5.5vh;transform:translateX(-50%);z-index:6;opacity:0;color:var(--hero-text)}
 .cue .chev{display:inline-block;animation:chev 2.6s var(--ease-soft) infinite;animation-delay:-1s}
 @keyframes chev{0%,100%{transform:translateY(-1px);opacity:.55}50%{transform:translateY(3px);opacity:1}}
 .ring{position:absolute;right:2rem;bottom:2rem;width:30px;height:30px;color:rgba(238,228,205,.85);transform:rotate(-90deg);z-index:6}
@@ -321,9 +321,6 @@ main{position:relative;z-index:2;background:var(--canvas)}
 @media (max-width:960px){.crew{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.crew{grid-template-columns:1fr 1fr;gap:.9rem}.mate p{display:none}}
 #team .also{margin-top:2.2rem;color:var(--text-secondary);max-width:62ch}
-#team .card-figure{margin-top:2.6rem;max-width:440px}
-#team .card-figure img{border-radius:12px;box-shadow:0 16px 44px rgba(38,32,26,.2)}
-#team .card-figure figcaption{margin-top:.75rem;font-family:var(--font-m);font-size:.68rem;letter-spacing:.1em;color:var(--text-secondary)}
 
 /* ============ Holz ============ */
 #holz .cols{display:grid;grid-template-columns:6fr 6fr;gap:clamp(2rem,5vw,4rem);align-items:center}
@@ -356,13 +353,11 @@ main{position:relative;z-index:2;background:var(--canvas)}
 /* ============ Gebiet ============ */
 #gebiet{text-align:center;background:linear-gradient(var(--canvas),var(--canvas-deep))}
 #gebiet h2,#gebiet .lede{margin-left:auto;margin-right:auto}
-#gebiet .map{max-width:560px;margin:2.6rem auto 0}
-#gebiet .map svg{width:100%;height:auto}
-#gebiet .ringlab{font-family:var(--font-m);font-size:10px;letter-spacing:.12em;fill:var(--text-secondary)}
-#gebiet circle.ring1,#gebiet circle.ring2{fill:none;stroke:var(--wood);stroke-opacity:.55;stroke-dasharray:4 6;transform-origin:center;transform-box:fill-box}
-#gebiet.in circle.ring2{animation:pulse 7s var(--ease-soft) infinite}
-#gebiet.in circle.ring1{animation:pulse 7s var(--ease-soft) -3.5s infinite}
-@keyframes pulse{0%,100%{stroke-opacity:.55}50%{stroke-opacity:.2}}
+#gebiet .map{max-width:760px;margin:2.6rem auto 0}
+#gebiet .map iframe{display:block;width:100%;aspect-ratio:16/10;border:0;border-radius:16px;
+  box-shadow:0 14px 40px rgba(36,36,35,.14);background:var(--canvas-deep)}
+#gebiet .map-link{display:inline-block;margin-top:1.15rem}
+@media (max-width:640px){#gebiet .map iframe{aspect-ratio:4/5}}
 
 /* ============ FAQ ============ */
 #fragen .wrap{max-width:780px}
@@ -635,10 +630,6 @@ footer .disclose{max-width:1180px;margin:1.4rem auto 0;font-size:.78rem;opacity:
     <h2 class="part">Sie sperren uns Ihre Tür auf. Also sollten Sie wissen, wer kommt.</h2>
     <p class="lede part">Die Tischlerei Findenig führt Andreas Findenig als Einzelunternehmen in Magdalensberg bei Lavamünd, eingetragen bei der WKO Kärnten. Geplant, gebaut, montiert und repariert wird mit einem kleinen, eingespielten Team: Vom ersten Anruf bis zur Übergabe haben Sie denselben Ansprechpartner.</p>
     <p class="also part">Bei Ihnen daheim arbeiten nur Leute von uns, keine Subfirmen. Und wie sauber wir eine Baustelle verlassen, lesen Sie am besten <a class="textlink" href="#stimmen">in den Stimmen unserer Kunden</a> nach.</p>
-    <figure class="card-figure part">
-      <img src="assets/visitenkarte.jpg" alt="Visitenkarte der Tischlerei Findenig: Andreas Findenig, Fenster, Türen, Sonnenschutz, Reparaturen, Service und Handel, Telefon 0664 4058015" loading="lazy" width="1004" height="650">
-      <figcaption>SIE KENNEN UNS VIELLEICHT SO: UNSERE KARTE.</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -710,24 +701,9 @@ footer .disclose{max-width:1180px;margin:1.4rem auto 0;font-size:.78rem;opacity:
     <span class="kicker part" style="color:var(--accent)">EINZUGSGEBIET</span>
     <h2 class="part" style="margin-inline:auto">Wo wir arbeiten.</h2>
     <p class="lede part">Rund eine Autostunde um Magdalensberg: Lavamünd, das Lavanttal, Völkermarkt und über den zweiten Standort auch der Raum Klagenfurt. Zum Erstgespräch kommen wir zu Ihnen, auch am Abend, wenn es sich untertags nicht ausgeht. Sie wohnen weiter weg? Fragen Sie trotzdem an: Für größere Projekte fahren wir auch weiter.</p>
-    <div class="map part" aria-hidden="true">
-      <svg viewBox="0 0 560 400">
-        <circle class="ring1" cx="280" cy="200" r="88"/>
-        <circle class="ring2" cx="280" cy="200" r="168"/>
-        <text class="ringlab" x="280" y="98" text-anchor="middle">30 MINUTEN</text>
-        <text class="ringlab" x="280" y="18" text-anchor="middle">60 MINUTEN</text>
-        <g fill="#6d6252" opacity=".7">
-          <circle cx="195" cy="146" r="3.5"/><circle cx="352" cy="132" r="3.5"/><circle cx="405" cy="238" r="3.5"/>
-          <circle cx="160" cy="255" r="3.5"/><circle cx="308" cy="300" r="3.5"/><circle cx="452" cy="120" r="2.6"/>
-          <circle cx="98" cy="180" r="2.6"/><circle cx="470" cy="300" r="2.6"/><circle cx="120" cy="330" r="2.6"/>
-        </g>
-        <g transform="translate(267 187) scale(0.7647)">
-          <rect x="1.5" y="1.5" width="31" height="31" rx="6" fill="#4C4C4E"/>
-          <path d="M11 6.5H24V11H16V14H22.5V18.5H16V23.5H11Z" fill="#FFE800"/>
-          <rect x="11" y="26" width="13" height="2.5" rx="1.25" fill="#5FB230"/>
-        </g>
-        <text class="ringlab" x="280" y="242" text-anchor="middle" style="fill:#3f7a1f;font-weight:600">WERKSTATT MAGDALENSBERG</text>
-      </svg>
+    <div class="map part">
+      <iframe src="https://www.google.com/maps?q=Tischlerei%20-%20Findenig%20Andreas%2C%20Magdalensberg%2062%2C%209473%20Lavam%C3%BCnd&z=12&hl=de&output=embed" title="Google-Maps-Karte: Tischlerei Findenig, Magdalensberg 62, 9473 Lavamünd" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a class="textlink map-link" href="https://maps.google.com/?cid=12808459624687478228" target="_blank" rel="noopener">In Google Maps öffnen und Route planen</a>
     </div>
   </div>
 </section>
