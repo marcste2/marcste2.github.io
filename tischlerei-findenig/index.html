@@ -6,7 +6,7 @@
 <title>Tischlerei Findenig · Türen, Fenster und Möbel nach Maß in Magdalensberg</title>
 <meta name="description" content="Tischlerei Findenig in Magdalensberg bei Lavamünd, Kärnten. Türen, Fenster, Sonnenschutz und Möbel nach Maß, dazu Service und Reparaturen. 5,0 Sterne aus 9 Google-Bewertungen.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#1b1611">
+<meta name="theme-color" content="#171614">
 <meta property="og:title" content="Tischlerei Findenig · Türen, Fenster und Möbel nach Maß">
 <meta property="og:description" content="Tischlerei in Magdalensberg bei Lavamünd, Kärnten. Türen, Fenster, Sonnenschutz und Möbel nach Maß, dazu Service und Reparaturen. 5,0 Sterne auf Google.">
 <meta property="og:type" content="website">
@@ -19,22 +19,25 @@
 <style>
 /* ============ Tokens ============ */
 :root{
-  --canvas:#f3ede1;
-  --canvas-deep:#e9e1cf;
-  --panel:#faf6ec;
-  --ink:#26201a;
-  --text-secondary:#6d6252;
-  --accent:#3f5a41;
-  --accent-hover:#324a34;
-  --accent-muted:rgba(63,90,65,.16);
-  --wood:#b98a52;
-  --hero-bg:#1b1611;
-  --hero-text:#f6f1e7;
-  --dusk:#241d15;
-  --dusk-panel:#2e261c;
-  --dusk-text:#f2ead9;
-  --dusk-secondary:#b3a891;
-  --dusk-accent:#9db894;
+  /* Palette nach der Visitenkarte des Betriebs: Weiss, Anthrazit, Apfelgruen, Gelb, Holz */
+  --canvas:#f6f4ee;
+  --canvas-deep:#ebe9e1;
+  --panel:#fcfbf7;
+  --ink:#242423;
+  --text-secondary:#6b6a62;
+  --accent:#3f7a1f;
+  --accent-hover:#346719;
+  --accent-muted:rgba(95,178,48,.16);
+  --brand-green:#5fb230;
+  --brand-yellow:#ffe800;
+  --wood:#c08a55;
+  --hero-bg:#171614;
+  --hero-text:#f6f4ec;
+  --dusk:#48484a;
+  --dusk-panel:#565659;
+  --dusk-text:#f1efe9;
+  --dusk-secondary:#bcbab2;
+  --dusk-accent:#8ccb5e;
   --tshadow:0 1px 2px rgba(12,9,6,.95),0 3px 12px rgba(12,9,6,.78),0 10px 44px rgba(12,9,6,.8);
   --ease:cubic-bezier(.22,.7,.24,1);
   --ease-soft:cubic-bezier(.33,0,.15,1);
@@ -53,14 +56,14 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit}
 h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spacing:-.01em}
-::selection{background:var(--accent);color:#f6f1e7}
+::selection{background:var(--brand-yellow);color:var(--ink)}
 
 /* Umgebungsebene: Papierkorn + langsame warme Lichtdrift */
 .env{position:fixed;inset:0;pointer-events:none;z-index:0}
 .env::before{content:"";position:absolute;inset:0;opacity:.05;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
 .env::after{content:"";position:absolute;inset:-30%;
-  background:radial-gradient(ellipse 45% 38% at 28% 24%,rgba(185,138,82,.10),transparent 70%);
+  background:radial-gradient(ellipse 45% 38% at 28% 24%,rgba(192,138,85,.10),transparent 70%);
   animation:envdrift 96s var(--ease-soft) infinite alternate;animation-delay:-31s}
 @keyframes envdrift{from{transform:translate3d(-4%,-2%,0) scale(1)}to{transform:translate3d(7%,9%,0) scale(1.12)}}
 
@@ -105,7 +108,7 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 .nav-links a:not(.btn):hover{opacity:1}
 .nav{color:var(--hero-text)}
 .nav .mark .mk-frame{stroke:var(--hero-text)}
-.nav.solid{background:rgba(243,237,225,.9);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 rgba(38,32,26,.08);padding-block:.55rem}
+.nav.solid{background:rgba(246,244,238,.92);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 rgba(36,36,35,.08);padding-block:.55rem}
 .nav.solid .mark .mk-frame{stroke:var(--ink)}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:inherit}
 .burger svg{width:26px;height:26px}
@@ -121,7 +124,7 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 .btn{display:inline-block;background:var(--accent);color:#f6f1e7;text-decoration:none;border:0;cursor:pointer;
   font-family:var(--font-b);font-weight:500;font-size:1rem;padding:.85rem 1.6rem;border-radius:999px;
   transition:background .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease);text-shadow:none}
-.btn:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 10px 26px rgba(50,74,52,.28)}
+.btn:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 10px 26px rgba(52,103,25,.28)}
 .btn.small{font-size:.9rem;padding:.55rem 1.15rem}
 .btn.ghost{background:transparent;border:1.5px solid rgba(246,241,231,.55);color:var(--hero-text)}
 .btn.ghost:hover{background:rgba(246,241,231,.12);box-shadow:none}
@@ -399,14 +402,14 @@ main{position:relative;z-index:2;background:var(--canvas)}
 .field input,.field select,.field textarea{width:100%;background:var(--dusk-panel);border:1.5px solid rgba(242,234,217,.18);
   border-radius:10px;color:var(--dusk-text);font-family:var(--font-b);font-size:1rem;padding:.85rem 1rem;
   transition:border-color .35s var(--ease),background .35s var(--ease)}
-.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23b3a891' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23bcbab2' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 1rem center}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--dusk-accent);background:#332a1f}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--dusk-accent);background:#3f3f42}
 .field textarea{min-height:120px;resize:vertical}
-.field ::placeholder{color:rgba(179,168,145,.75)}
+.field ::placeholder{color:rgba(188,186,178,.7)}
 #anfrage .micro{font-size:.82rem;color:var(--dusk-secondary);margin:.8rem 0 1.3rem;max-width:52ch}
-#anfrage .btn{background:var(--dusk-accent);color:#20281e;font-weight:600}
-#anfrage .btn:hover{background:#b1cba7;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+#anfrage .btn{background:var(--brand-green);color:#17230d;font-weight:600}
+#anfrage .btn:hover{background:#6fc13e;box-shadow:0 10px 26px rgba(0,0,0,.35)}
 .success{display:none;background:var(--dusk-panel);border:1.5px solid var(--dusk-accent);border-radius:14px;padding:1.6rem;font-size:1.05rem}
 .success b{color:var(--dusk-accent)}
 form.sent{display:none}
@@ -420,7 +423,7 @@ form.sent + .success{display:block}
 .aside-card li .ic{font-family:var(--font-m);color:var(--dusk-accent);flex:none;font-size:.8rem}
 
 /* ============ Footer ============ */
-footer{background:#1d1712;color:var(--dusk-secondary);padding:3.2rem clamp(1.2rem,5vw,4rem) 2.4rem;position:relative;z-index:2}
+footer{background:#232325;color:var(--dusk-secondary);padding:3.2rem clamp(1.2rem,5vw,4rem) 2.4rem;position:relative;z-index:2}
 footer .top{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start;max-width:1180px;margin:0 auto}
 footer .brand{display:flex;align-items:center;gap:.7rem;color:var(--dusk-text);text-decoration:none}
 footer nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.3rem}
@@ -723,7 +726,7 @@ footer .disclose{max-width:1180px;margin:1.4rem auto 0;font-size:.78rem;opacity:
           <path d="M11 6.5H24V11H16V14H22.5V18.5H16V23.5H11Z" fill="#FFE800"/>
           <rect x="11" y="26" width="13" height="2.5" rx="1.25" fill="#5FB230"/>
         </g>
-        <text class="ringlab" x="280" y="242" text-anchor="middle" style="fill:#3f5a41;font-weight:600">WERKSTATT MAGDALENSBERG</text>
+        <text class="ringlab" x="280" y="242" text-anchor="middle" style="fill:#3f7a1f;font-weight:600">WERKSTATT MAGDALENSBERG</text>
       </svg>
     </div>
   </div>
