@@ -6,7 +6,7 @@
 <title>Tischlerei Findenig · Türen, Fenster und Möbel nach Maß in Magdalensberg</title>
 <meta name="description" content="Tischlerei Findenig in Magdalensberg bei Lavamünd, Kärnten. Türen, Fenster, Sonnenschutz und Möbel nach Maß, dazu Service und Reparaturen. 5,0 Sterne aus 9 Google-Bewertungen.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#f3ede1">
+<meta name="theme-color" content="#1b1611">
 <meta property="og:title" content="Tischlerei Findenig · Türen, Fenster und Möbel nach Maß">
 <meta property="og:description" content="Tischlerei in Magdalensberg bei Lavamünd, Kärnten. Türen, Fenster, Sonnenschutz und Möbel nach Maß, dazu Service und Reparaturen. 5,0 Sterne auf Google.">
 <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect x='1.5' y='1.5' width='31' height='31' rx='6' fill='%234C4C4E'/%3E%3Cpath d='M11 6.5H24V11H16V14H22.5V18.5H16V23.5H11Z' fill='%23FFE800'/%3E%3Crect x='11' y='26' width='13' height='2.5' rx='1.25' fill='%235FB230'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============ Tokens ============ */
 :root{
@@ -94,6 +94,12 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 .brand-word{display:flex;flex-direction:column;line-height:1}
 .brand-word .b1{font-family:var(--font-d);font-weight:600;font-size:1.18rem;letter-spacing:.01em}
 .brand-word .b2{font-family:var(--font-m);font-size:.5rem;letter-spacing:.34em;margin-top:.28rem;opacity:.75}
+/* Marken-Lockup nach der Visitenkarte des Betriebs: Gelb auf Grau, gruener Balken */
+.brand-card{display:inline-flex;flex-direction:column;align-items:flex-start;background:#4C4C4E;border-radius:8px;
+  padding:.36rem .66rem .58rem;line-height:1;position:relative;box-shadow:0 3px 12px rgba(12,9,6,.3)}
+.brand-card::after{content:"";position:absolute;left:.66rem;right:.66rem;bottom:.28rem;height:2.5px;border-radius:2px;background:#5FB230}
+.bc-top{font-family:"Anton",system-ui,sans-serif;font-weight:400;font-size:.5rem;letter-spacing:.26em;color:#FFE800}
+.bc-name{font-family:"Anton",system-ui,sans-serif;font-weight:400;font-size:1.3rem;letter-spacing:.05em;color:#FFE800;margin-top:.16rem}
 .nav-links{display:flex;align-items:center;gap:clamp(.9rem,2vw,1.7rem);list-style:none}
 .nav-links a:not(.btn){text-decoration:none;font-size:.92rem;font-weight:500;opacity:.85;transition:opacity .3s var(--ease)}
 .nav-links a:not(.btn):hover{opacity:1}
@@ -123,7 +129,7 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 
 /* ============ Hero ============ */
 .hero{position:relative;height:560vh;background:var(--hero-bg);z-index:1}
-.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden}
 .stage .poster,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .stage .poster{background-size:cover;background-position:center}
 .stage video{opacity:0;transition:opacity .8s var(--ease);will-change:transform;transform:translateZ(0)}
@@ -155,12 +161,16 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 .band .micro{margin-top:1rem;font-size:.85rem;color:#d9cdb4}
 .chip{display:inline-flex;align-items:center;gap:.55rem;background:rgba(18,13,9,.55);border:1px solid rgba(220,205,175,.3);
   border-radius:999px;padding:.5rem 1.05rem;backdrop-filter:blur(10px);font-family:var(--font-m);font-size:.72rem;letter-spacing:.12em;
-  text-shadow:0 1px 3px rgba(10,7,5,.85)}
+  white-space:nowrap;text-shadow:0 1px 3px rgba(10,7,5,.85)}
 .cue{position:absolute;left:50%;bottom:5.5vh;transform:translateX(-50%);z-index:6;opacity:0}
 .cue .chev{display:inline-block;animation:chev 2.6s var(--ease-soft) infinite;animation-delay:-1s}
 @keyframes chev{0%,100%{transform:translateY(-1px);opacity:.55}50%{transform:translateY(3px);opacity:1}}
 .ring{position:absolute;right:2rem;bottom:2rem;width:30px;height:30px;color:rgba(238,228,205,.85);transform:rotate(-90deg);z-index:6}
 .ring circle{transition:stroke-dashoffset .25s linear}
+.stage::after{content:"";position:absolute;left:0;right:0;top:0;height:130px;z-index:4;pointer-events:none;
+  background:linear-gradient(rgba(15,11,8,.55),transparent)}
+.nav:not(.solid) .nav-links a:not(.btn){text-shadow:0 1px 6px rgba(12,9,6,.65)}
+@media (max-width:480px){.chip{font-size:.58rem;letter-spacing:.08em;padding:.45rem .9rem;background:rgba(18,13,9,.72)}}
 
 /* Zeichen-Splits */
 .band .w{display:inline-block;white-space:nowrap}
@@ -308,10 +318,14 @@ main{position:relative;z-index:2;background:var(--canvas)}
 @media (max-width:960px){.crew{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.crew{grid-template-columns:1fr 1fr;gap:.9rem}.mate p{display:none}}
 #team .also{margin-top:2.2rem;color:var(--text-secondary);max-width:62ch}
+#team .card-figure{margin-top:2.6rem;max-width:440px}
+#team .card-figure img{border-radius:12px;box-shadow:0 16px 44px rgba(38,32,26,.2)}
+#team .card-figure figcaption{margin-top:.75rem;font-family:var(--font-m);font-size:.68rem;letter-spacing:.1em;color:var(--text-secondary)}
 
 /* ============ Holz ============ */
 #holz .cols{display:grid;grid-template-columns:6fr 6fr;gap:clamp(2rem,5vw,4rem);align-items:center}
 @media (max-width:960px){#holz .cols{grid-template-columns:1fr}}
+@media (max-width:720px){#holz .hobel-box{display:none}}
 #holz .copy p+p{margin-top:1rem}
 #holz .copy p{color:var(--text-secondary)}
 #holz .copy p strong{color:var(--ink);font-weight:500}
@@ -446,12 +460,7 @@ footer .disclose{max-width:1180px;margin:1.4rem auto 0;font-size:.78rem;opacity:
 <header>
 <nav class="nav" id="nav" aria-label="Hauptnavigation">
   <a class="brand" href="#top" aria-label="Tischlerei Findenig, zum Seitenanfang">
-    <svg class="mark" viewBox="0 0 34 34" aria-hidden="true">
-      <rect x="1.5" y="1.5" width="31" height="31" rx="6" fill="#4C4C4E"/>
-      <path d="M11 6.5H24V11H16V14H22.5V18.5H16V23.5H11Z" fill="#FFE800"/>
-      <rect x="11" y="26" width="13" height="2.5" rx="1.25" fill="#5FB230"/>
-    </svg>
-    <span class="brand-word"><span class="b1">Findenig</span><span class="b2">TISCHLEREI</span></span>
+    <span class="brand-card"><span class="bc-top">TISCHLEREI</span><span class="bc-name">FINDENIG</span></span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#arbeiten">Arbeiten</a></li>
@@ -623,6 +632,10 @@ footer .disclose{max-width:1180px;margin:1.4rem auto 0;font-size:.78rem;opacity:
     <h2 class="part">Sie sperren uns Ihre Tür auf. Also sollten Sie wissen, wer kommt.</h2>
     <p class="lede part">Die Tischlerei Findenig führt Andreas Findenig als Einzelunternehmen in Magdalensberg bei Lavamünd, eingetragen bei der WKO Kärnten. Geplant, gebaut, montiert und repariert wird mit einem kleinen, eingespielten Team: Vom ersten Anruf bis zur Übergabe haben Sie denselben Ansprechpartner.</p>
     <p class="also part">Bei Ihnen daheim arbeiten nur Leute von uns, keine Subfirmen. Und wie sauber wir eine Baustelle verlassen, lesen Sie am besten <a class="textlink" href="#stimmen">in den Stimmen unserer Kunden</a> nach.</p>
+    <figure class="card-figure part">
+      <img src="assets/visitenkarte.jpg" alt="Visitenkarte der Tischlerei Findenig: Andreas Findenig, Fenster, Türen, Sonnenschutz, Reparaturen, Service und Handel, Telefon 0664 4058015" loading="lazy" width="1004" height="650">
+      <figcaption>SIE KENNEN UNS VIELLEICHT SO: UNSERE KARTE.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -830,13 +843,8 @@ footer .disclose{max-width:1180px;margin:1.4rem auto 0;font-size:.78rem;opacity:
 <!-- ============ FOOTER ============ -->
 <footer data-dark>
   <div class="top">
-    <a class="brand" href="#top">
-      <svg class="mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="1.5" y="1.5" width="31" height="31" rx="6" fill="#4C4C4E"/>
-        <path d="M11 6.5H24V11H16V14H22.5V18.5H16V23.5H11Z" fill="#FFE800"/>
-        <rect x="11" y="26" width="13" height="2.5" rx="1.25" fill="#5FB230"/>
-      </svg>
-      <span class="brand-word"><span class="b1">Findenig</span><span class="b2" style="opacity:.6">TISCHLEREI · MAGDALENSBERG</span></span>
+    <a class="brand" href="#top" aria-label="Tischlerei Findenig, zum Seitenanfang">
+      <span class="brand-card"><span class="bc-top">TISCHLEREI</span><span class="bc-name">FINDENIG</span></span>
     </a>
     <nav aria-label="Fußzeile">
       <ul>
@@ -908,8 +916,9 @@ const bands=[...document.querySelectorAll('.band')].map(el=>({
   el,a:parseFloat(el.dataset.a),b:parseFloat(el.dataset.b),op:-1,k:-1
 }));
 
-const VIDEO_URL='assets/hero-scrub.mp4';
-const VIDEO_BYTES=6219004; /* echte Dateigröße von hero-scrub.mp4 */
+const SMALLSCREEN=matchMedia('(max-width: 720px)').matches;
+const VIDEO_URL=SMALLSCREEN?'assets/hero-scrub-720.mp4':'assets/hero-scrub.mp4';
+const VIDEO_BYTES=SMALLSCREEN?2909665:6219004; /* echte Dateigroessen der beiden Varianten */
 
 let scrubOn=false,heroOnScreen=true,initDone=false;
 let target=0,shown=0,rafId=null,lastTick=0;
@@ -952,7 +961,7 @@ function updateCaptions(p){
 /* rAF-Lerp, ruht bei Konvergenz */
 function tick(now){
   const dt=Math.min(100,now-(lastTick||now));lastTick=now;
-  const k=0.16;
+  const k=SMALLSCREEN?0.3:0.16;
   shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
   if(Math.abs(target-shown)<0.0005){shown=target;rafId=null;lastTick=0}
   else rafId=requestAnimationFrame(tick);
@@ -1214,6 +1223,13 @@ holdBtn.addEventListener('pointercancel',holdEnd);
 holdBtn.addEventListener('keydown',holdStart);
 holdBtn.addEventListener('keyup',holdEnd);
 holdBtn.addEventListener('blur',holdEnd);
+
+/* Mobil: Hobel-Box ist ausgeblendet, Holzarten leuchten stattdessen beim Reinscrollen auf */
+if(SMALLSCREEN&&woods){
+  new IntersectionObserver((es,io)=>{
+    es.forEach(en=>{if(en.isIntersecting){woods.classList.add('lit');io.disconnect()}});
+  },{threshold:0.25}).observe(woods);
+}
 /* Karten ohne Interaktion trotzdem zeigen, wenn die Sektion lange sichtbar war */
 new IntersectionObserver(es=>{
   if(es[0].isIntersecting&&RM.matches)pinToFinalStates();
