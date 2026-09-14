@@ -183,13 +183,9 @@ h1,h2,h3{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spaci
 #band4 .cta-row{--kb:clamp(0,calc((var(--k,0) - .74)*5),1);opacity:var(--kb);transform:translateY(calc((1 - var(--kb))*16px))}
 #band4 .micro{--km:clamp(0,calc((var(--k,0) - .84)*6),1);opacity:var(--km)}
 
-/* Statischer Hero: fünf Gates, in CSS und JS IDENTISCH */
+/* Statischer Hero: nur bei Reduced Motion, in CSS und JS IDENTISCH */
 .static-copy{display:none}
-@media (max-width:720px),
-       (orientation:portrait) and (max-width:1024px),
-       (orientation:portrait) and (pointer:coarse),
-       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
-       (prefers-reduced-motion:reduce){
+@media (prefers-reduced-motion:reduce){
   .hero{height:auto;min-height:100svh}
   .stage{position:relative;height:100svh}
   .stage video,.ring,.band,.cue,.dust{display:none}
@@ -293,7 +289,9 @@ main{position:relative;z-index:2;background:var(--canvas)}
 .step .n{font-family:var(--font-m);font-size:.7rem;letter-spacing:.22em;color:var(--text-secondary)}
 .step h3{font-size:1.35rem;margin:.25rem 0 .1rem}
 .step .when{display:inline-block;font-family:var(--font-m);font-size:.72rem;letter-spacing:.1em;color:var(--accent);
-  background:var(--accent-muted);border-radius:999px;padding:.22rem .7rem;margin:.35rem 0 .6rem}
+  background:var(--accent-muted);border-radius:999px;padding:.22rem .7rem;margin:.35rem 0 .6rem;
+  transition:background .6s var(--ease),color .6s var(--ease)}
+.step.passed .when{background:var(--accent);color:#f6f1e7}
 .step p{color:var(--text-secondary);max-width:54ch}
 #ablauf .sum{margin-top:2.6rem;max-width:760px;background:var(--panel);border:1px solid rgba(38,32,26,.1);border-radius:14px;
   padding:1.4rem 1.6rem;color:var(--ink);font-size:1.02rem}
@@ -1018,12 +1016,8 @@ function failVideo(){
   if(ringSvg&&ringSvg.parentNode)ringSvg.remove();
 }
 
-/* Fünf Gates, IDENTISCH zu den CSS-Media-Queries */
+/* Ein Gate, IDENTISCH zur CSS-Media-Query: nur Reduced Motion bekommt den Statik-Hero */
 const GATES=[
-  '(max-width: 720px)',
-  '(orientation: portrait) and (max-width: 1024px)',
-  '(orientation: portrait) and (pointer: coarse)',
-  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
   '(prefers-reduced-motion: reduce)'
 ];
 function enableScrub(){
